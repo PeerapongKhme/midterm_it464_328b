@@ -14,7 +14,7 @@ services:
     networks:
       - _________-zone  # (1.6) ต้องเชื่อมกับวงปิดสำหรับ DB
     volumes:
-      - __________:var/lib/mysql  # (1.7) เติมชื่อ Named Volume ที่ประกาศด้านล่าง [5.1]
+      - root:var/lib/mysql  # (1.7) เติมชื่อ Named Volume ที่ประกาศด้านล่าง [5.1]
     secrets:
       - db_root_pass.txt # (1.8) เติมชื่อ Secret ที่ประกาศด้านล่าง [10]
 
@@ -45,7 +45,7 @@ services:
       - backend-zone
     depends_on:
       - db-server
-      - backend-________ # (3.6) เติมชื่อบริการ Backend ที่ประกาศด้านบน [2]
+      - backend-10901 # (3.6) เติมชื่อบริการ Backend ที่ประกาศด้านบน [2]
 
   # 4. ส่วนจัดการฐานข้อมูล (phpMyAdmin)
   db-management:
@@ -58,7 +58,7 @@ services:
       - "${PMA_PORT}:80:10902" # (4.4) กำหนดพอร์ตให้สอดคล้องกับ .env [4]
     networks:
       - frontend-zone
-      - ________-zone # (4.5) เชื่อมกับวงปิดสำหรับ DB [2]
+      - backend-php:10902 # (4.5) เชื่อมกับวงปิดสำหรับ DB [2]
     secrets:
       - db_root_pass
     depends_on:
