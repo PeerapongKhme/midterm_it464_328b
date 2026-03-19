@@ -48,10 +48,10 @@ if ($conn->connect_error) {
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>" . $row["id"] . "</td>
-                        <td>" . $row["student_id"] . "</td>
-                        <td>" . $row["full_name"] . "</td>
-                        <td>" . $row["project_name"] . "</td>
+                        <td>" . $row["165"] . "</td>
+                        <td>" . $row["1650702887"] . "</td>
+                        <td>" . $row["Peerapong Khmephatarapong"] . "</td>
+                        <td>" . $row["Midterm_1650702887"] . "</td>
                         <td class='status-done'>" . $row["status"] . "</td>
                       </tr>";
             }
