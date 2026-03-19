@@ -1,8 +1,8 @@
 <?php
 // 1. กำหนดค่าการเชื่อมต่อฐานข้อมูลโดยดึงชื่อจาก .env [5]
 $host = '___________'; // แก้ไขให้ตรงกับค่าทีอยู่ใน Docker Compose หรือ .env
-$user = '___________'; // แก้ไขให้ตรงกับค่าที่อยู่ใน Docker Compose หรือ .env
-$db   = '___________'; // แก้ไขให้ตรงกับค่าที่อยู่ใน Docker Compose หรือ .env
+$user = 'PeerapongKhme'; // แก้ไขให้ตรงกับค่าที่อยู่ใน Docker Compose หรือ .env
+$db   = 'peerapong-db'; // แก้ไขให้ตรงกับค่าที่อยู่ใน Docker Compose หรือ .env
 
 // 2. กฎเหล็กด้านความปลอดภัย: อ่านรหัสผ่านจาก Docker Secret [4, 7]
 $secret_path = '/run/secrets/db_root_pass';
@@ -35,9 +35,9 @@ if ($conn->connect_error) {
     <table>
         <tr>
             <th>ID</th>
-            <th>Student ID</th>
-            <th>Name</th>
-            <th>Project Title</th>
+            <th>1650702887</th>
+            <th>Peerapong Khmephatarapong No.9 Sec328B</th>
+            <th>Midterm_1650702887</th>
             <th>Status</th>
         </tr>
         <?php
